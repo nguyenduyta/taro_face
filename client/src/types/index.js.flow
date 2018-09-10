@@ -1,0 +1,44 @@
+/**
+ * @flow
+ */
+
+type TermType = {
+  id?: number,
+  term: string,
+  meaning?: string,
+  reading?: string,
+  samplePhrases?: Array<SamplePhraseType>,
+  similars?: Array<TermType>
+}
+
+type SamplePhraseType = {
+  id?: number,
+  phrase: string,
+  term?: TermType
+}
+
+type PaperSheetType$ChosenQuestion = {
+  term: TermType,
+  answers: Array<TermType>,
+  samplePhrase: SamplePhraseType
+}
+
+type QuestionType = {
+  id?: number,
+  term: string,
+  phrase: string,
+  answers: Array<string>
+}
+
+type PaperSheetType = {
+  id?: number,
+  questions: Array<QuestionType>
+}
+
+export type {
+  TermType,
+  SamplePhraseType,
+  PaperSheetType$ChosenQuestion,
+  QuestionType,
+  PaperSheetType
+}
